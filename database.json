@@ -1,0 +1,92 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "user",
+      "password": "user",
+      "name": "Nguyễn Thành Đạt",
+      "role": "user"
+    },
+    {
+      "id": 2,
+      "username": "admin",
+      "password": "admin",
+      "name": "Nguyễn Thành Đạt",
+      "role": "admin"
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "questionText": "Hành vi đưa xe cơ giới không bảo đảm tiêu chuẩn an toàn kỹ thuật và bảo vệ môi trường vào tham gia giao thông đường bộ có bị nghiêm cấm không?",
+      "category": "concepts",
+      "isCritical": true,
+      "options": {
+        "A": "Không nghiêm cấm.",
+        "B": "Bị nghiêm cấm.",
+        "C": "Bị nghiêm cấm tuỳ từng trường hợp.",
+        "D": "Không bị nghiêm cấm nếu có bảo hiểm."
+      },
+      "correctOption": "B",
+      "image": ""
+    },
+    {
+      "id": 2,
+      "questionText": "Biển nào cấm xe máy chuyên dùng và xe mô tô?",
+      "category": "signs",
+      "isCritical": false,
+      "options": {
+        "A": "Biển 1 và 2.",
+        "B": "Biển 1 và 3.",
+        "C": "Biển 2 và 3.",
+        "D": "Cả ba biển."
+      },
+      "correctOption": "A",
+      "image": "https://example.com/images/bien-bao-cam.jpg"
+    },
+    {
+      "id": 3,
+      "questionText": "Theo tín hiệu đèn của xe cơ giới, xe nào vi phạm quy tắc giao thông?",
+      "category": "shapes",
+      "isCritical": false,
+      "options": {
+        "A": "Xe con.",
+        "B": "Xe mô tô.",
+        "C": "Cả hai xe.",
+        "D": "Không xe nào vi phạm."
+      },
+      "correctOption": "C",
+      "image": "https://example.com/images/sa-hinh-01.jpg"
+    }
+  ],
+  "exams": [
+    {
+      "id": 1,
+      "title": "Đề thi số 1",
+      "questionIds": [1, 2, 3]
+    },
+    {
+      "id": 2,
+      "title": "Đề thi số 2",
+      "questionIds": [2, 3]
+    }
+  ],
+  "histories": [
+    {
+      "id": 1,
+      "studentId": 1,
+      "examId": 1,
+      "examTitle": "Đề thi số 1",
+      "date": "2026-06-19T14:30:00Z",
+      "score": 23,
+      "totalQuestions": 25,
+      "isPassed": true,
+      "failedOnCritical": false,
+      "userAnswers": [
+        { "questionId": 1, "selected": "B", "isCorrect": true },
+        { "questionId": 2, "selected": "C", "isCorrect": false },
+        { "questionId": 3, "selected": "C", "isCorrect": true }
+      ]
+    }
+  ]
+}
