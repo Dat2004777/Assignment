@@ -25,7 +25,9 @@ const AdminSidebar = () => {
 
         <SidebarContent>
           <SidebarGroup>
-            <SidebarGroupLabel>Quản lý</SidebarGroupLabel>
+            <SidebarGroupLabel className="text-lg font-semibold">
+              Quản lý
+            </SidebarGroupLabel>
             <SidebarMenuItem>
               <SidebarMenuButton>
                 <Link
