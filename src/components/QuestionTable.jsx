@@ -8,6 +8,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "./ui/button";
+import { Link } from "react-router";
 
 const QuestionTable = ({ questions }) => {
   return (
@@ -40,7 +41,9 @@ const QuestionTable = ({ questions }) => {
                   {question.isCritical ? "Điểm liệt" : "Thường"}
                 </TableCell>
                 <TableCell className="flex gap-2 justify-center">
-                  <Button variant="outline">Sửa</Button>
+                  <Link to={`/admin/questions/update/:id`}>
+                    <Button variant="outline">Sửa</Button>
+                  </Link>
                   <Button variant="destructive">Xóa</Button>
                 </TableCell>
               </TableRow>

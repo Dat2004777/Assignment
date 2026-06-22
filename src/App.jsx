@@ -4,6 +4,8 @@ import HistoryPage from "./pages/user/HistoryPage";
 import LoginPage from "./pages/auth/LoginPage";
 import RegisterPage from "./pages/auth/RegisterPage";
 import AdminQuestionsPage from "./pages/admin/AdminQuestionsPage";
+import AdminQuestionCreatePage from "./pages/admin/AdminQuestionCreatePage";
+import AdminQuestionUpdatePage from "./pages/admin/AdminQuestionUpdatePage";
 
 function App() {
   return (
@@ -16,6 +18,14 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
 
         <Route path="/admin/questions" element={<AdminQuestionsPage />} />
+        <Route
+          path="/admin/questions/create"
+          element={<AdminQuestionCreatePage />}
+        />
+        <Route
+          path="/admin/questions/update/:id"
+          element={<AdminQuestionUpdatePage />}
+        />
       </Routes>
     </>
   );

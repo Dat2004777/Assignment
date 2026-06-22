@@ -1,4 +1,5 @@
 import AdminSidebar from "@/components/layouts/AdminSidebar";
+import QuestionTable from "@/components/QuestionTable";
 import {
   Card,
   CardDescription,
@@ -6,15 +7,13 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { SidebarProvider } from "@/components/ui/sidebar";
+import { Button } from "@base-ui/react";
+import { Plus } from "lucide-react";
 import { useState } from "react";
 import questionService from "@/services/questionService";
 import { useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Plus } from "lucide-react";
-import { Link } from "react-router";
-import QuestionTable from "@/components/QuestionTable";
 
-const AdminQuestionsPage = () => {
+const AdminQuestionCreatePage = () => {
   const [questions, setQuestions] = useState([]);
 
   const fetchQuestions = async () => {
@@ -36,22 +35,20 @@ const AdminQuestionsPage = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="text-2xl font-bold">
-                  Quản lý câu hỏi
+                  Tạo câu hỏi mới
                 </CardTitle>
                 <CardDescription>
-                  Quản lý ngân hàng câu hỏi ôn thi GPLX
+                  Thêm câu hỏi mới vào trong ngân hàng đề thi
                 </CardDescription>
               </CardHeader>
             </Card>
           </div>
 
           <div className="flex justify-end mt-8">
-            <Link to={"/admin/questions/create"}>
-              <Button>
-                <Plus />
-                Thêm câu hỏi mới
-              </Button>
-            </Link>
+            <Button>
+              <Plus />
+              Thêm câu hỏi mới
+            </Button>
           </div>
 
           <div className="mt-8">
@@ -63,4 +60,4 @@ const AdminQuestionsPage = () => {
   );
 };
 
-export default AdminQuestionsPage;
+export default AdminQuestionCreatePage;
