@@ -64,29 +64,16 @@
     },
     {
       "questionText": "Theo tín hiệu đèn của xe cơ giới, xe nào vi phạm quy tắc giao thông?",
-      "category": "shapes",
-      "isCritical": false,
+      "category": "signs",
+      "isCritical": true,
       "options": {
         "A": "Xe con.",
         "B": "Xe mô tô.",
         "C": "Cả hai xe.",
         "D": "Không xe nào vi phạm."
       },
-      "correctOption": "C",
+      "correctOption": "D",
       "id": 4
-    },
-    {
-      "questionText": "Theo tín hiệu đèn của xe cơ giới, xe nào vi phạm quy tắc giao thông?",
-      "category": "shapes",
-      "isCritical": false,
-      "options": {
-        "A": "Xe con.",
-        "B": "Xe mô tô.",
-        "C": "Cả hai xe.",
-        "D": "Không xe nào vi phạm."
-      },
-      "correctOption": "C",
-      "id": 5
     }
   ],
   "categories": [

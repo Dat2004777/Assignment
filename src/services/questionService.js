@@ -51,6 +51,40 @@ const questionService = {
       throw error;
     }
   },
+
+  getQuestionById: async (questionId) => {
+    try {
+      const res = await axios.get(
+        `http://localhost:3000/questions/${questionId}`,
+      );
+      return res.data;
+    } catch (error) {
+      console.log("Lỗi getQuestionById tại questionService: ", error);
+      throw error;
+    }
+  },
+
+  updateQuestion: async (questionId, questionData) => {
+    const { questionText, category, isCritical, options, correctOption } =
+      questionData;
+
+    try {
+      const res = await axios.put(
+        `http://localhost:3000/questions/${questionId}`,
+        {
+          questionText,
+          category,
+          isCritical,
+          options,
+          correctOption,
+        },
+      );
+      return res.data;
+    } catch (error) {
+      console.log("Lỗi updateQuestion tại questionService: ", error);
+      throw error;
+    }
+  },
 };
 
 export default questionService;

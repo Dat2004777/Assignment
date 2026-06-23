@@ -9,9 +9,11 @@ import {
 } from "@/components/ui/table";
 import { Button } from "../ui/button";
 import { Link } from "react-router";
+import { categoryData } from "@/lib/data";
 
 const QuestionTable = ({ questions, onDeleteClick }) => {
   const questionLength = questions.length;
+
   return (
     <>
       <div className="rounded-xl border border-slate-200 bg-white shadow w-full p-8">
@@ -36,20 +38,18 @@ const QuestionTable = ({ questions, onDeleteClick }) => {
                   {question.questionText}
                 </TableCell>
                 <TableCell className="text-center">
-                  {question.category}
+                  {categoryData[question.category]}
                 </TableCell>
                 <TableCell className="text-center">
                   {question.isCritical ? "Điểm liệt" : "Thường"}
                 </TableCell>
                 <TableCell className="flex gap-2 justify-center">
-                  <Link to={`/admin/questions/update/:id`}>
+                  <Link to={`/admin/questions/update/${question.id}`}>
                     <Button variant="outline">Sửa</Button>
                   </Link>
                   <Button
                     variant="destructive"
-                    onClick={() => {
-                      onDeleteClick(question.id);
-                    }}
+                    onClick={() => onDeleteClick(question.id)}
                   >
                     Xóa
                   </Button>

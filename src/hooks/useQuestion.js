@@ -37,6 +37,31 @@ export default function useQuestion(usingPage) {
     }
   }, [usingPage]);
 
+  const fetchQuestionById = useCallback(
+    async (questionId) => {
+      try {
+        const res = await questionService.getQuestionById(questionId);
+        if (res) {
+          setQuestionContent(res.questionText);
+          setSelectedCategory(res.category);
+          setIsCritical(res.isCritical);
+          setOptionA(res.options.A);
+          setOptionB(res.options.B);
+          setOptionC(res.options.C);
+          setOptionD(res.options.D);
+          setCorrectOption(res.correctOption);
+        }
+      } catch (error) {
+        console.log(
+          `Lỗi khi tải câu hỏi ID ${questionId} tại ${usingPage}: `,
+          error,
+        );
+        toast.error("Lỗi khi tải câu hỏi");
+      }
+    },
+    [usingPage],
+  );
+
   const handleDeleteQuestion = useCallback(
     async (questionId) => {
       try {
@@ -116,6 +141,47 @@ export default function useQuestion(usingPage) {
     correctOption,
   ]);
 
+  const handleUpdateQuestion = useCallback(
+    async (questionId) => {
+      const questionData = {
+        questionText: questionContent,
+        category: selectedCategory,
+        isCritical: isCritical,
+        options: {
+          A: optionA,
+          B: optionB,
+          C: optionC,
+          D: optionD,
+        },
+        correctOption: correctOption,
+      };
+
+      try {
+        const result = await questionService.updateQuestion(
+          questionId,
+          questionData,
+        );
+        if (result) {
+          toast.success("Cập nhật câu hỏi thành công");
+        }
+      } catch (error) {
+        console.log(`Lỗi khi cập nhật câu hỏi tại ${usingPage}: `, error);
+        toast.error("Lỗi khi cập nhật câu hỏi");
+      }
+    },
+    [
+      usingPage,
+      questionContent,
+      selectedCategory,
+      isCritical,
+      optionA,
+      optionB,
+      optionC,
+      optionD,
+      correctOption,
+    ],
+  );
+
   return {
     questions,
     categories,
@@ -130,6 +196,7 @@ export default function useQuestion(usingPage) {
     setCorrectOption,
     fetchQuestions,
     fetchCategories,
+    fetchQuestionById,
     handleDeleteQuestion,
     handleAddAnswer,
     handleSetQuestionContent,
@@ -139,5 +206,6 @@ export default function useQuestion(usingPage) {
     handleSetOptionB,
     handleSetOptionC,
     handleSetOptionD,
+    handleUpdateQuestion,
   };
 }

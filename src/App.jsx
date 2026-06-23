@@ -23,7 +23,7 @@ function App() {
           element={<AdminQuestionCreatePage />}
         />
         <Route
-          path="/admin/questions/update/:id"
+          path="/admin/questions/update/:questionId"
           element={<AdminQuestionUpdatePage />}
         />
       </Routes>
