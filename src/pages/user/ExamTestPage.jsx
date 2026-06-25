@@ -35,14 +35,14 @@ const ExamTestPage = () => {
 
   const [isConfirmOpen, setIsConfirmOpen] = useState(false);
 
-  const [randomQuestions, setRandomQuestions] = useState(
+  const [randomQuestionIds, setRandomQuestionIds] = useState(
     location.state?.randomQuestionIds || [],
   );
 
   const questionList =
     examId === "random"
-      ? questions.length > 0 && randomQuestions.length > 0
-        ? randomQuestions
+      ? questions.length > 0 && randomQuestionIds.length > 0
+        ? randomQuestionIds
             .map((id) => questions.find((q) => q.id === id))
             .filter(Boolean)
         : []
@@ -78,15 +78,15 @@ const ExamTestPage = () => {
     if (
       examId === "random" &&
       questions.length > 0 &&
-      randomQuestions.length === 0
+      randomQuestionIds.length === 0
     ) {
       const shuffled = [...questions].sort(() => 0.5 - Math.random());
       const selected = shuffled.slice(0, 10).map((question) => question.id);
       setTimeout(() => {
-        setRandomQuestions(selected);
+        setRandomQuestionIds(selected);
       }, 0);
     }
-  }, [examId, questions, randomQuestions]);
+  }, [examId, questions, randomQuestionIds]);
 
   if (questionList.length === 0) {
     return (

@@ -382,6 +382,132 @@
         }
       ],
       "id": 5
+    },
+    {
+      "studentId": 2,
+      "examId": "random",
+      "examTitle": "Đề thi ngẫu nhiên",
+      "date": "2026-06-25T08:52:44.847Z",
+      "score": 0,
+      "totalQuestions": 10,
+      "isPassed": false,
+      "failedOnCritical": true,
+      "userAnswers": [
+        {
+          "questionId": 7,
+          "selected": "",
+          "isCorrect": false
+        },
+        {
+          "questionId": 6,
+          "selected": "",
+          "isCorrect": false
+        },
+        {
+          "questionId": 11,
+          "selected": "",
+          "isCorrect": false
+        },
+        {
+          "questionId": 4,
+          "selected": "",
+          "isCorrect": false
+        },
+        {
+          "questionId": 1,
+          "selected": "",
+          "isCorrect": false
+        },
+        {
+          "questionId": 8,
+          "selected": "",
+          "isCorrect": false
+        },
+        {
+          "questionId": 9,
+          "selected": "",
+          "isCorrect": false
+        },
+        {
+          "questionId": 3,
+          "selected": "",
+          "isCorrect": false
+        },
+        {
+          "questionId": 2,
+          "selected": "",
+          "isCorrect": false
+        },
+        {
+          "questionId": 10,
+          "selected": "",
+          "isCorrect": false
+        }
+      ],
+      "id": 6
+    },
+    {
+      "studentId": 2,
+      "examId": "random",
+      "examTitle": "Đề thi ngẫu nhiên",
+      "date": "2026-06-25T08:53:59.517Z",
+      "score": 0,
+      "totalQuestions": 10,
+      "isPassed": false,
+      "failedOnCritical": true,
+      "userAnswers": [
+        {
+          "questionId": 3,
+          "selected": "",
+          "isCorrect": false
+        },
+        {
+          "questionId": 7,
+          "selected": "",
+          "isCorrect": false
+        },
+        {
+          "questionId": 2,
+          "selected": "",
+          "isCorrect": false
+        },
+        {
+          "questionId": 1,
+          "selected": "",
+          "isCorrect": false
+        },
+        {
+          "questionId": 9,
+          "selected": "",
+          "isCorrect": false
+        },
+        {
+          "questionId": 8,
+          "selected": "",
+          "isCorrect": false
+        },
+        {
+          "questionId": 4,
+          "selected": "",
+          "isCorrect": false
+        },
+        {
+          "questionId": 6,
+          "selected": "",
+          "isCorrect": false
+        },
+        {
+          "questionId": 11,
+          "selected": "",
+          "isCorrect": false
+        },
+        {
+          "questionId": 10,
+          "selected": "",
+          "isCorrect": false
+        }
+      ],
+      "id": 7
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/table";
 import { useAuth } from "@/hooks/useAuth";
 import useHistory from "@/hooks/useHistory";
-import { historyDate, historyResult } from "@/lib/data";
+import { historyDate, historyResult } from "@/lib/utils";
 import { useEffect } from "react";
 import { Link } from "react-router";
 

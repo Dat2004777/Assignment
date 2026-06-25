@@ -11,6 +11,7 @@ import useQuestion from "@/hooks/useQuestion";
 import { useNavigate } from "react-router";
 import { toast } from "sonner";
 import { useEffect } from "react";
+import { selectRandomElements, shuffleArray } from "@/lib/utils";
 
 const TestCard = ({ exam, isRandom = false }) => {
   const navigate = useNavigate();
@@ -28,11 +29,11 @@ const TestCard = ({ exam, isRandom = false }) => {
       return;
     }
 
-    const shuffled = [...questions].sort(() => 0.5 - Math.random());
+    const shuffled = shuffleArray(questions);
 
-    const randomQuestionIds = shuffled
-      .slice(0, 10)
-      .map((question) => question.id);
+    const randomQuestionIds = selectRandomElements(shuffled, 10).map(
+      (question) => question.id,
+    );
 
     navigate("/exam-test/random", { state: { randomQuestionIds } });
   };
