@@ -74,6 +74,19 @@
       },
       "correctOption": "D",
       "id": 4
+    },
+    {
+      "questionText": "Theo tín hiệu đèn của xe cơ giới, xe nào vi phạm quy tắc giao thông?",
+      "category": "signs",
+      "isCritical": false,
+      "options": {
+        "A": "Xe con.",
+        "B": "Xe mô tô.",
+        "C": "Cả hai xe.",
+        "D": "Không xe nào vi phạm."
+      },
+      "correctOption": "D",
+      "id": 5
     }
   ],
   "categories": [
@@ -94,12 +107,21 @@
     {
       "id": 1,
       "title": "Đề thi số 1",
-      "questionIds": [1, 2, 3]
+      "questionIds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
     },
     {
       "id": 2,
       "title": "Đề thi số 2",
-      "questionIds": [2, 3]
+      "questionIds": [
+        2,
+        3
+      ]
     }
   ],
   "histories": [
@@ -214,6 +236,176 @@
         }
       ],
       "id": 4
+    },
+    {
+      "studentId": 2,
+      "examId": 1,
+      "examTitle": "Đề thi số 1",
+      "date": "2026-06-25T06:09:56.958Z",
+      "score": 1,
+      "totalQuestions": 3,
+      "isPassed": false,
+      "failedOnCritical": false,
+      "userAnswers": [
+        {
+          "questionId": 1,
+          "selected": "B",
+          "isCorrect": true
+        },
+        {
+          "questionId": 2,
+          "selected": "",
+          "isCorrect": false
+        },
+        {
+          "questionId": 3,
+          "selected": "",
+          "isCorrect": false
+        }
+      ],
+      "id": 5
+    },
+    {
+      "studentId": 2,
+      "examId": 1,
+      "examTitle": "Đề thi số 1",
+      "date": "2026-06-25T06:14:25.120Z",
+      "score": 3,
+      "totalQuestions": 3,
+      "isPassed": false,
+      "failedOnCritical": false,
+      "userAnswers": [
+        {
+          "questionId": 1,
+          "selected": "B",
+          "isCorrect": true
+        },
+        {
+          "questionId": 2,
+          "selected": "A",
+          "isCorrect": true
+        },
+        {
+          "questionId": 3,
+          "selected": "C",
+          "isCorrect": true
+        }
+      ],
+      "id": 6
+    },
+    {
+      "studentId": 2,
+      "examId": 1,
+      "examTitle": "Đề thi số 1",
+      "date": "2026-06-25T06:51:49.986Z",
+      "score": 0,
+      "totalQuestions": 5,
+      "isPassed": false,
+      "failedOnCritical": true,
+      "userAnswers": [
+        {
+          "questionId": 1,
+          "selected": "",
+          "isCorrect": false
+        },
+        {
+          "questionId": 2,
+          "selected": "",
+          "isCorrect": false
+        },
+        {
+          "questionId": 3,
+          "selected": "",
+          "isCorrect": false
+        },
+        {
+          "questionId": 4,
+          "selected": "",
+          "isCorrect": false
+        },
+        {
+          "questionId": 5,
+          "selected": "",
+          "isCorrect": false
+        }
+      ],
+      "id": 7
+    },
+    {
+      "studentId": 2,
+      "examId": 1,
+      "examTitle": "Đề thi số 1",
+      "date": "2026-06-25T06:52:07.972Z",
+      "score": 2,
+      "totalQuestions": 5,
+      "isPassed": false,
+      "failedOnCritical": false,
+      "userAnswers": [
+        {
+          "questionId": 1,
+          "selected": "B",
+          "isCorrect": true
+        },
+        {
+          "questionId": 2,
+          "selected": "B",
+          "isCorrect": false
+        },
+        {
+          "questionId": 3,
+          "selected": "C",
+          "isCorrect": true
+        },
+        {
+          "questionId": 4,
+          "selected": "C",
+          "isCorrect": false
+        },
+        {
+          "questionId": 5,
+          "selected": "C",
+          "isCorrect": false
+        }
+      ],
+      "id": 8
+    },
+    {
+      "studentId": 2,
+      "examId": 1,
+      "examTitle": "Đề thi số 1",
+      "date": "2026-06-25T06:52:54.576Z",
+      "score": 0,
+      "totalQuestions": 5,
+      "isPassed": false,
+      "failedOnCritical": true,
+      "userAnswers": [
+        {
+          "questionId": 1,
+          "selected": "",
+          "isCorrect": false
+        },
+        {
+          "questionId": 2,
+          "selected": "",
+          "isCorrect": false
+        },
+        {
+          "questionId": 3,
+          "selected": "",
+          "isCorrect": false
+        },
+        {
+          "questionId": 4,
+          "selected": "",
+          "isCorrect": false
+        },
+        {
+          "questionId": 5,
+          "selected": "",
+          "isCorrect": false
+        }
+      ],
+      "id": 9
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

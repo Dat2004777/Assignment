@@ -118,7 +118,7 @@ const ExamTestPage = () => {
 
   return (
     <>
-      <ExamHeader />
+      <ExamHeader setIsConfirmOpen={setIsConfirmOpen} />
 
       <main className="container mx-auto px-10">
         <div className="mt-8">
