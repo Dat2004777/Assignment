@@ -14,12 +14,13 @@ import useExam from "@/hooks/useExam";
 import useQuestion from "@/hooks/useQuestion";
 import { Clock } from "lucide-react";
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router";
+import { useParams, useNavigate, useLocation } from "react-router";
 import { toast } from "sonner";
 
 const ExamTestPage = () => {
   const { user } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
   const { examId } = useParams();
 
   const {
@@ -95,7 +96,7 @@ const ExamTestPage = () => {
     const historyData = {
       studentId: user.id,
       examId: Number(examId),
-      examTitle: currentExam.title,
+      examTitle: examId === "random" ? "Đề thi ngẫu nhiên" : currentExam.title,
       date: new Date().toISOString(),
       score: correctCount,
       totalQuestions: questionList.length,

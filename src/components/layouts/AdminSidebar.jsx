@@ -44,14 +44,16 @@ const AdminSidebar = () => {
               </SidebarMenuButton>
             </SidebarMenuItem>
 
-            {/* <SidebarMenuItem>
-              <SidebarMenuButton>
+            <SidebarMenuItem>
+              <SidebarMenuButton
+                isActive={location.pathname.startsWith("/admin/tests")}
+              >
                 <Link to={"/admin/tests"} className="flex items-center gap-3">
                   <LucideFileText className="w-5 h-5" />
                   <span>Bộ đề</span>
                 </Link>
               </SidebarMenuButton>
-            </SidebarMenuItem> */}
+            </SidebarMenuItem>
           </SidebarGroup>
         </SidebarContent>
 

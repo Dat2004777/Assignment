@@ -1,5 +1,4 @@
 import { Link } from "react-router";
-import { Badge } from "./ui/badge";
 import {
   Card,
   CardContent,
@@ -8,25 +7,54 @@ import {
   CardTitle,
 } from "./ui/card";
 import { Button } from "@/components/ui/button";
+import useQuestion from "@/hooks/useQuestion";
+import { useNavigate } from "react-router";
+import { toast } from "sonner";
 
-const TestCard = ({ exam }) => {
+const TestCard = ({ exam, isRandom = false }) => {
+  const navigate = useNavigate();
+  const { questions } = useQuestion("TestCard");
+
+  const handleStartRandomExam = () => {
+    if (questions.length < 10) {
+      toast.error("Kho câu hỏi hiện tại chưa đủ 10 câu để tạo đề ngẫu nhiên");
+      return;
+    }
+
+    const shuffled = [...questions].sort(() => 0.5 - Math.random());
+
+    const randomQuestionIds = shuffled
+      .slice(0, 10)
+      .map((question) => question.id);
+
+    navigate("/exam-test/random", { state: { randomQuestionIds } });
+  };
+
   return (
     <>
       <Card className="transition-all duration-250 hover:-translate-y-1.5">
         <CardHeader>
           <CardTitle className="flex justify-between">
-            <h2 className="text-xl font-semibold">{exam.title}</h2>
-            {/* <Badge>Chưa làm</Badge> */}
+            <h2 className="text-xl font-semibold">
+              {isRandom ? "Đề thi ngẫu nhiên" : exam.title}
+            </h2>
           </CardTitle>
           <CardDescription>
-            Cấu trúc đề thi chuẩn, thời gian 10 phút. Bao gồm các câu hỏi hay
-            gặp.
+            {isRandom
+              ? "Đề thi được tạo ngẫu nhiên, tăng khả năng tiếp thu kiến thức, hỗ trợ ôn tập hiệu quả"
+              : "Cấu trúc đề thi chuẩn, thời gian 10 phút. Bao gồm các câu hỏi hay gặp."}
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <Link to={`/exam-test/${exam.id}`}>
-            <Button className="w-full p-6">Bắt đầu làm bài</Button>
-          </Link>
+          {isRandom ? (
+            <Button className="w-full p-6" onClick={handleStartRandomExam}>
+              Bắt đầu làm bài
+            </Button>
+          ) : (
+            <Link to={`/exam-test/${exam.id}`}>
+              <Button className="w-full p-6">Bắt đầu làm bài</Button>
+            </Link>
+          )}
         </CardContent>
       </Card>
     </>

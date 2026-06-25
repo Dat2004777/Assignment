@@ -42,12 +42,10 @@ const HomePage = () => {
             <Tabs>
               <TabsList className="flex w-full">
                 <TabsTrigger value="exam-sets">Đề Thi Theo Bộ</TabsTrigger>
-                <TabsTrigger value="random-exams">
-                  Đề Thi Ngẫu Nhiên
-                </TabsTrigger>
-                <TabsTrigger value="categories-exams">
+                <TabsTrigger value="other-exams">Đề Thi Khác</TabsTrigger>
+                {/* <TabsTrigger value="categories-exams">
                   Học Theo Danh Mục
-                </TabsTrigger>
+                </TabsTrigger> */}
               </TabsList>
               <TabsContent value="exam-sets">
                 <div className="grid grid-cols-3 gap-8 mt-4">
@@ -56,8 +54,12 @@ const HomePage = () => {
                   ))}
                 </div>
               </TabsContent>
-              <TabsContent value="random-exams">Random</TabsContent>
-              <TabsContent value="categories-exams">Category</TabsContent>
+              <TabsContent value="other-exams">
+                <div className="grid grid-cols-3 gap-8 mt-4">
+                  <TestCard isRandom={true} />
+                </div>
+              </TabsContent>
+              {/* <TabsContent value="categories-exams">Category</TabsContent> */}
             </Tabs>
           </div>
         </div>

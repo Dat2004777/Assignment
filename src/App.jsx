@@ -2,12 +2,13 @@ import { Routes, Route } from "react-router";
 import HomePage from "./pages/user/HomePage";
 import LoginPage from "./pages/auth/LoginPage";
 import RegisterPage from "./pages/auth/RegisterPage";
-import AdminQuestionsPage from "./pages/admin/AdminQuestionsPage";
-import AdminQuestionCreatePage from "./pages/admin/AdminQuestionCreatePage";
-import AdminQuestionUpdatePage from "./pages/admin/AdminQuestionUpdatePage";
+import AdminQuestionsPage from "./pages/admin/question/AdminQuestionsPage";
+import AdminQuestionCreatePage from "./pages/admin/question/AdminQuestionCreatePage";
+import AdminQuestionUpdatePage from "./pages/admin/question/AdminQuestionUpdatePage";
 import ExamTestPage from "./pages/user/ExamTestPage";
 import HistoryPage from "./pages/user/HistoryPage";
 import HistoryDetail from "./pages/user/HistoryDetail";
+import AdminTestsPage from "./pages/admin/test/AdminTestsPage";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           path="/admin/questions/update/:questionId"
           element={<AdminQuestionUpdatePage />}
         />
+        <Route path="/admin/tests" element={<AdminTestsPage />} />
       </Routes>
     </>
   );
