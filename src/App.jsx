@@ -7,7 +7,7 @@ import AdminQuestionCreatePage from "./pages/admin/question/AdminQuestionCreateP
 import AdminQuestionUpdatePage from "./pages/admin/question/AdminQuestionUpdatePage";
 import ExamTestPage from "./pages/user/ExamTestPage";
 import HistoryPage from "./pages/user/HistoryPage";
-import HistoryDetail from "./pages/user/HistoryDetail";
+import HistoryDetail from "./pages/user/HistoryDetailPage";
 import AdminTestsPage from "./pages/admin/test/AdminTestsPage";
 import AdminTestCreatePage from "./pages/admin/test/AdminTestCreatePage";
 import AdminTestUpdatePage from "./pages/admin/test/AdminTestUpdatePage";
